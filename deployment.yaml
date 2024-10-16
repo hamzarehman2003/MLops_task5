@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task5-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: task5
+  template:
+    metadata:
+      labels:
+        app: task5
+    spec:
+      containers:
+      - name: task5
+        image: zinoor/task5:latest  
+        ports:
+        - containerPort: 5000
